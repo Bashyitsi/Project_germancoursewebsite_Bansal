@@ -28,7 +28,6 @@
 			<ul>
 				<li><a class="active" href="">Home</a></li>
 				<li><a href="#portfolio_section">About</a></li>
-				<li><a href="#team_section">Team</a></li>
 				<li><a href="#services_section">Services</a></li>
 				<li><a href="#contactus_section">Contact</a></li>
 		</ul>
@@ -120,41 +119,24 @@
 	</div>
 
 
-<!-- TEAM -->
-	<div class="diffSection" id="team_section">
-		<center><p style="font-size: 50px; padding-top: 100px; padding-bottom: 60px;">We're the Creators</p></center>
-		<div class="totalcard">
-			<div class="card">
-				<center><img src="images/creator/ceo.jpg"></center>
-				<center><div class="card-title">Ishimwe Christophe</div>
-				<div id="detail">
-					<p></p>
-					<div class="duty"></div>
-					<a href="" target="_blank"><button class="btn-roshan">Follow +</button></a>
-				</div>
-				</center>
-			</div>
-			
-		</div>
-	</div>
-
 
 <!-- SERVICES -->
 
 <section class="services">
-    <h2 style="color: #fff;">Our Services</h2>
-    <div class="services-container">
-        <div class="service-card">
-            <img src="images/icon/computer-courses.png" alt="German Language Courses" />
-            <h3><a href="register.php?service=german_courses" class="register-button">German Language Courses</a></h3>
-            <p>Comprehensive courses for different proficiency levels, from A1 to B2.</p>
-        </div>
+    <div class="diffSection" id="services_section"></div>
+        <h2 style="color: #fff;">Our Services</h2>
+            <div class="services-container">
+               <div class="service-card">
+                 <img src="images/icon/computer-courses.png" alt="German Language Courses" />
+                 <h3><a href="register.php?service=german_courses" class="register-button">German Language Courses</a></h3>
+                 <p>Comprehensive courses for different proficiency levels, from A1 to B2.</p>
+                </div>
         
-        <div class="service-card">
-            <img src="images/icon/brainbooster.png" alt=" Private  Tutoring " />
-            <h3><a href="register.php?service=private_tutoring" class="register-button">Private Tutoring</a></h3>
-            <p>One-on-one sessions tailored to individual needs and goals.</p>
-        </div>
+            <div class="service-card">
+                <img src="images/icon/brainbooster.png" alt=" Private  Tutoring " />
+                <h3><a href="register.php?service=private_tutoring" class="register-button">Private Tutoring</a></h3>
+                 <p>One-on-one sessions tailored to individual needs and goals.</p>
+            </div>
         
         <div class="service-card">
             <img src="images/icon/online-tutorials.png" alt="Business German" />
@@ -188,8 +170,6 @@
     </div>
 </section>
 
-
-<!-- Reviews by Students -->
 <section class="testimonials">
     <div id="makeitfull"> 
         <a href="#review_section"><img src="images/icon/makeitfull.png"></a>
@@ -200,21 +180,7 @@
         </div>
         <div class="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="rev-card">
-                        <div class="identity">
-                            <img src="images/creator/ceo.jpg"><p>Ishimwe Christophe</p>
-                            <h6>Founder & CEO</h6>
-                            <div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"></div>
-                        </div>
-                        <div class="rev-cont">
-                            <p id="title">Review:</p>
-                            <p id="content">
-                                At Deutsch Connect Academy, we are dedicated to providing high-quality German language education. Our academy offers a dynamic learning environment, experienced instructors, and a supportive community to help students achieve their language goals...
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="carousel-item">
                     <div class="rev-card">
                         <div class="identity">
@@ -251,99 +217,67 @@
 </section>
 
 <!-- CONTACT US -->
-<div class="diffSection" id="contactus_section">
-    <center><p style="font-size: 50px; padding: 100px">Contact Us</p></center>
-    <div class="csec"></div>
-    <div class="back-contact">
-        <div class="cc">
-            <!-- Action points to a server-side script for secure form handling -->
-            <form action="submit-contact.php" method="POST">
-                <label class="te">First Name <span class="imp">*</span></label>
-                <label style="margin-left: 185px">Last Name <span class="imp">*</span></label><br>
-                <center>
-                    <input type="text" name="fname" style="margin-right: 10px; width: 175px" maxlength="50" required="required">
-                    <input type="text" name="lname" style="width: 175px" maxlength="50" required="required"><br>
-                </center>
-                <label>Email <span class="imp">*</span></label><br>
-                <input type="email" name="mail" style="width: 100%" required="required"><br>
-                <label>Message <span class="imp">*</span></label><br>
-                <input type="text" name="message" style="width: 100%" maxlength="500" required="required"><br>
-                <label>Additional Details</label><br>
-                <textarea name="additional" maxlength="1000"></textarea><br>
-                
-                <!-- CSRF token for security -->
-                <input type="hidden" name="csrf_token" value="GENERATED_CSRF_TOKEN">
-                
-                <!-- Optional CAPTCHA for bot protection -->
-                <!-- Add a CAPTCHA here if needed -->
-
-                <button type="submit" id="csubmit">Send Message</button>
-            </form>
+<section class="contact-form-section">
+    <div class="diffSection" id="contactus_section"></div>
+    <h2>Contact Us</h2>
+    <form class="contact-form" action="your-action-url" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
         </div>
-    </div>
-</div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-button">Send Message</button>
+    </form>
+</section>
 
 
-<!-- FEEDBACK -->
-<div class="title2" id="feedBACK">
-    <span>Give Feedback</span>
-    <div class="shortdesc2">
-        <p>Please share your valuable feedback with us</p>
-    </div>
-</div>
 
-<div class="feedbox">
-    <div class="feed">
-        <!-- Form uses a server-side endpoint (e.g., PHP, Node.js) for processing -->
-        <form action="/submit-feedback" method="post">
-            <label>Your Name</label><br>
-            <input type="text" name="name" class="fname" maxlength="50" required="required"><br>
-            <label>Email</label><br>
-            <input type="email" name="email" required="required"><br>
-            <label>Additional Details</label><br>
-            <textarea name="additional" maxlength="500"></textarea><br>
-            
-            <!-- Add CSRF token here -->
-            <input type="hidden" name="csrf_token" value="GENERATED_CSRF_TOKEN">
-            
-            <!-- CAPTCHA or honeypot (optional) -->
-            <button type="submit" id="csubmit">Send Message</button>
-        </form>
-    </div>
-</div>
 
 
 <!-- Sliding Information -->
 	<marquee style="background: linear-gradient(to right, #FA4B37, #DF2771); margin-top: 50px;" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="8"><div class="marqu">"Deutsch Connect Academy, we have excellent facilities with a refreshing natural environment, providing a comfortable space for learning and interaction."</div></marquee>
 
-<!-- FOOTER -->
-	<footer>
-		<div class="footer-container">
-			<div class="left-col">
-				<img class="logo" src="images/icon/logo1.jpg" style="  width: 40%; height: 40%; ">
-				<!--<div class="logo"></div>-->
-				<div class="social-media">
-					<a href="#"><img src="images/icon\fb.png"></a>
-					<a href="#"><img src="images/icon\insta.png"></a>
-					<a href="#"><img src="images/icon\tt.png"></a>
-					<a href="#"><img src="images/icon\ytube.png"></a>
-					<a href="#"><img src="images/icon\linkedin.png"></a>
-				</div><br><br>
-				<p class="rights-text">Copyright © 2024 Created By Zele All Rights Reserved.</p>
-				<br><p><img src="images/icon/location.png"> Norsken building<br></p><br>
-				<p><img src="images/icon/phone.png">+250783697405<br><img src="images/icon/mail.png">&nbsp; deutchconnecta@gmail.com</p>
-			</div>
-			<div class="right-col">
-				<h1 style="color: #fff">Our Newsletter</h1>
-				<div class="border"></div><br>
-				<p>Enter Your Email to get our News and updates.</p>
-				<form class="newsletter-form">
-					<input class="txtb" type="email" placeholder="Enter Your Email">
-					<input class="btn" type="submit" value="Submit">
-				</form>
-			</div>
-		</div>
-	</footer>
-
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Footer Links Section -->
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+    
+            <!-- Founder Section -->
+            <div class="founder-section">
+                <img src="images/creator/ceo.jpg" alt="Founder & CEO" class="founder-photo">
+                <p class="founder-name">Ishimwe Christophe</p>
+                <p class="founder-title">Founder & CEO</p>
+            </div>
+    
+            <!-- Contact Info Section -->
+            <div class="contact-info">
+                <p><a href="mailto:info@deutschconnect.com">info@deutschconnect.com</a></p>
+                <p><a href="tel:+250 783 697 405">+250 783 697 405</a></p>
+                <p>Norseken-kigali</p>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Deutsch Connect Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    
+    
 </body>
 </html>

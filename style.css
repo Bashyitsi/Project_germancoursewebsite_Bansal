@@ -946,90 +946,73 @@ form textarea {
     }
 }
 
-
-/*FEEDBACK*/
-.title2 {
-	position: relative;
-	margin-top: 150px;
-	margin-left: 100px;
-}
-.title2 span{
-	font-weight: 700;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 30px;
-	color: #2E3D49;
-}
-.title2 .shortdesc2 {
-	padding: 10px;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 15px;
-	color: #2E3D49;
-	margin-bottom: 10px;
-}
-.feedbox {
-	margin-top: 50px;
-	width: 100%;
-	display: flex;
-	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7)),url("images/extra/b4.jpg");
-	background-size: cover;
-	padding: 50px 80px;
-	background-attachment: fixed;
-}
-.feed {
-	width: 800px;
-	height: 400px;
-	position: relative;
-	border-radius: 10px;
-	justify-content: center;
-	box-shadow: inset 0 0 90px rgba(0,0,0,0.6),
-					0 0 80px rgba(0,0,0,0.2);
-	background: rgba(0,0,0,0.4);
-}
-.feed form {
-	width: 100%;
-	height: 100%;
-	padding: 20px;
+.contact-form-section {
+    background-color: #f9f9f9; /* Light background for the section */
+    padding: 50px 20px; /* Spacing around the section */
+    text-align: center; /* Center-align text */
 }
 
-.feed form label {
-	
-	color: #f2f2f2;
-	font-size: 10px;
-	font-weight: 800;
+.contact-form {
+    max-width: 600px; /* Max width for the form */
+    margin: 0 auto; /* Center the form */
+    background-color: #fff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 30px; /* Inner padding */
 }
-.feed form input, .feed textarea {
-	padding: 15px;
-	border-radius: 5px;
-	box-shadow: inset 0 0 5px lightgray;
-	border: 1px solid rgba(0,0,0,0.2);
-	outline: none;
-	color: #2E3D49;
-	background: #fff9;
-	font-weight: 600;
+
+.form-group {
+    margin-bottom: 20px; /* Space between form groups */
+    text-align: left; /* Align labels and inputs to the left */
 }
-.feed form input {
-	margin-bottom: 15px;
-	width: 50%;
+
+label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 8px; /* Space between label and input */
+    font-weight: bold; /* Bold labels */
 }
-.feed form .fname {
-	width: 25%;
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Inner padding */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
 }
-.feed form textarea {
-	width: 100%;
-	height: 100px;
+
+textarea {
+    resize: vertical; /* Allow vertical resize only */
 }
-.feed #csubmit {
-	margin-top: 25px; 
-	background: linear-gradient(to right, #d50032, #d50032);
-	border-radius: 5px;
-	border-style: none;
-	outline: none;
-	width: 100%;
-	padding: 15px 25px;
-	color: #fff;
-	font-size: 12px;
-	cursor: pointer;
+
+.submit-button {
+    background-color: #2E3D49; /* Dark button color */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    padding: 12px 20px; /* Button padding */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 18px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth background transition */
 }
+
+.submit-button:hover {
+    background-color: #1c252d; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+
+    .submit-button {
+        width: 100%; /* Full width button */
+    }
+}
+
+
 
 /*SCROLLING TEXT*/
 .marqu {
@@ -1041,146 +1024,112 @@ form textarea {
 }
 
 /*FOOTER*/
-footer {
-	color: #E5E8EF;
-	background: #000D;
-	padding: 50px 0; 
-}
-footer .footer-container {
-	max-width: 1300px;
-	margin: auto;
-	padding: 0 20px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap-reverse;
-}
-footer .social-media img{
-	width: 22px;
-}
-footer .logo img{
-	
-	width: 50%;
-	height: 50%;
-}
-footer .social-media a{
-	margin-right: 10px;
-	font-size: 22px;
-	text-decoration: none;
-}
-footer .right-col h1{
-	font-size: 26px;
+/* Footer Styling */
+.site-footer {
+    background-color: #2E3D49; /* Dark background */
+    color: #fff; /* White text */
+    padding: 20px 0; /* Padding to maintain minimal height */
+    text-align: center;
 }
 
-footer .border{
-	width: 100px;
-	height: 4px;
-	background: linear-gradient(to right, #d50032, #d50032);
-	margin: 2px;
-}
-footer .newsletter-form {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-}
-footer input::placeholder {
-  color: white !important;
-}
-footer .txtb {
-	flex: 1;
-	padding: 18px 40px;
-	font-size: 16px;
-	background: #343A40;
-	border: none;
-	font-weight: 700;
-	outline: none;
-	border-radius: 5px;
-	min-width: 260px;
-	margin-top: 20px;
-	color: white;
-}
-footer .btn {
-	margin-top: 20px;
-	padding: 18px 40px;
-	font-size: 16px;
-	color: #f1f1f1;
-	background: linear-gradient(to right, #d50032, #d50032);
-	border: none;
-	font-weight: 700;
-	outline: none;
-	border-radius: 5px;
-	margin-left: 20px;
-	cursor: pointer;
-	transition: opacity .3s linear;	
-}
-footer .btn:hover {
-	opacity: .7;
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically in the middle */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px; /* Small padding for container */
 }
 
-/*PROPERTIES FOR MAKING WEBSITE RESPONSIVE*/
-@media screen and (max-width: 960px) {
-	.footer-container {
-		max-width: 600px;
-	}
-	.right-col {
-		width: 100%;
-		margin-bottom: 60px;
-	}
-	.left-col {
-		width: 100%;
-		text-align: center;
-	}
-	.social-media {
-		display: flex;
-		justify-content: center;
-	}
-	.logo {
-		transition: 1s;
-		margin-left: 15%;
-	}
-	nav ul, .srch, .get-started{
-		display: none;
-	}
-	.menu {
-		display: block;
-	}
-	nav {
-		padding-bottom: 20px;
-		border-bottom: 1px solid #0005;
-		/* position: fixed; */
-		/* top: 0; */
-	}
-	.quote p, .quote h5, .play {
-		justify-content: center;
-		text-align: center;
-	}
-	.quote p {
-		font-size: 30px;
-	}
-	.service-container .right-side img {
-		width: 90%;
-	}
-	.title {
-		margin-top: 0px;
-	}
-	
-}
-@media screen and (max-width: 700px) {
-	footer .btn{
-		margin: 0;
-		width: 100%;
-		margin-top: 20px;
-	}
-	.svg-image img {
-		width: 90%;
-		margin: 20px;
-		/* align-self: center; */
-	}
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Align links horizontally */
+    flex-direction: row;
+    gap: 15px; /* Small gap between each link */
 }
 
-@media screen and (max-width: 1000px) {	
-	.feedbox form input, .feedbox form .fname{
-		width: 100%;
-	}
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px; /* Font size for readability */
+}
+
+.founder-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.founder-photo {
+    width: 50px; /* Small image size */
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.founder-name, 
+.founder-title {
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    background-color: #1F2A36;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive Footer Layout */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        gap: 20px; /* Add gap between stacked sections */
+    }
+
+    .footer-links ul {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+        align-items: center;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 5px;
+    }
+}
+
+
+/* Responsive Footer Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections on small screens */
+        align-items: center; /* Center align on small devices */
+    }
+
+    .founder-section {
+        margin-top: 20px; /* Space above founder section */
+        text-align: center; /* Center text */
+    }
+
+    .footer-links ul {
+        text-align: center; /* Center links */
+    }
 }
