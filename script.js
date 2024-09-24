@@ -7,6 +7,14 @@
 // 	var scrolled = (winScroll / height) * 100;
 // 	document.getElementById("myBar").style.width = scrolled + "%"; 
 // }
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('nav');
+  if (window.scrollY > 50) {
+      navbar.classList.add('shrink');
+  } else {
+      navbar.classList.remove('shrink');
+  }
+});
 
 function scrollAppear() {
   var introText = document.querySelector('.side-text');
@@ -155,4 +163,31 @@ function sideMenu(side) {
     menu.style = 'transform: translateX(-100%);';
   }
   side++;
+}
+let currentSlide = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-item');
+    const totalSlides = slides.length;
+    
+    // Loop around the slides
+    if (index >= totalSlides) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = totalSlides - 1;
+    } else {
+        currentSlide = index;
+    }
+
+    // Update the transform property to show the current slide
+    const offset = -currentSlide * 100; // Move left based on the current slide
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
 }
