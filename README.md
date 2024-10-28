@@ -1,40 +1,89 @@
-Here’s an updated project overview including information on using Laravel for the backend:
+# Solid - Free Next.js Web Template and Starter Kit for SaaS
 
----
+Solid is a free Next.js template specifically crafted for startups, SaaS, and software websites. It provides an extensive array of necessary sections, elements, and pages required to build a fully-equipped website for any SaaS, software, or startup site. Comes with all cutting edge React and Next.js features - **Built with Next.js 13, React 18 and TypeScript.**
 
-# Project: German Course Website - Bansal
+This Next.js template's homepage comes with an awesome hero area, logos of associated brands, a features section, an about section, another features section with tabs, counters, and star ratings, integration options, clear call-to-actions, an FAQ section with accordions, a testimonials section, pricing tables, a contact page, a blog, and a distinctive footer.
 
-The website offers German language courses with details on levels, schedules, and fees. It features online registration, user accounts for students and teachers, and class management tools. The site is mobile-friendly, SEO-optimized, and secure. Additional resources include blogs and testimonials to support the learning experience.
+**Solid Next.js template packed with all necessary external pages** - such as login, registration, blog grids, and single blog pages, among others. This broad collection of pages provides all the necessary tools to create a feature-packed, comprehensive, and visually appealing website or landing page for software, a web application, or SaaS.
 
-## Key Features
+### [🔥 Get Solid Pro - Next.js SaaS Boilerplate and Starter Kit](https://nextjstemplates.com/templates/solid)
 
-- **Home Page:** Overview of the school, courses, and key highlights.
-- **About Us:** Information about the school, instructors, and teaching philosophy.
-- **Courses Page:** Detailed course info (levels, schedules, fees) with search/filter options.
-- **Admission & Registration:** Online form and payment integration for easy sign-up.
-- **Pricing Page:** Transparent course fees with any available financial plans.
-- **Blog/Resources:** Learning tips, articles, and downloadable study guides.
-- **Contact Page:** Contact form, school details, and social media links.
-- **Responsive Design:** Mobile-friendly layout with accessibility features.
-- **SEO Optimization:** Targeted keywords, fast loading, and structured data for search engines.
-- **Security:** SSL encryption and GDPR compliance for data protection.
+![Startup Pro](https://uideck.com/wp-content/uploads/edd/2023/07/solid-saas.png)
 
-## Backend Development with Laravel
+### [🚀 Solid PRO Live Demo](https://solid.nextjstemplates.com/)
 
-Laravel will be used as the PHP framework for the backend to manage the website's functionalities effectively. Key aspects include:
+### [🚀 Solid FREE Live Demo](https://solid-free.nextjstemplates.com/)
 
-- **MVC Architecture:** Laravel follows the Model-View-Controller pattern, which helps separate the application logic, making it easier to maintain and scale the codebase.
-- **Database Management:** Utilizing Eloquent ORM for efficient database interactions, allowing for smooth retrieval and manipulation of course, user, and registration data.
-- **Authentication & Authorization:** Built-in features for user authentication, ensuring secure login for both students and teachers.
-- **RESTful APIs:** Creating APIs for the frontend to interact with the backend, facilitating data exchange for course listings, user registrations, and more.
-- **Blade Templating:** Leveraging Blade, Laravel’s templating engine, to create dynamic and reusable views for the website.
-- **Security Features:** Built-in protection against common vulnerabilities such as SQL injection and cross-site scripting (XSS).
-- **Testing:** Utilizing Laravel's testing tools to ensure the application works correctly and efficiently through unit and feature tests.
+### TailAdmin React PRO vs TailAdmin React FREE Comparison 📊
 
-## Optional Features
+#### [Solid PRO](https://solid.nextjstemplates.com/)
+- SaaS Boilerplate + Starter Kit with Essential Integrations and Functionalities
+- Essential Integrations: Auth, DB, Stripe, MDX and More ...
+- Fully Functional, Ready to Use Sanity Blog Support
+- Premium Email Support
+- Functional External Pages
+- Free Lifetime Future Updates
+___
+#### [Solid FREE](https://solid-free.nextjstemplates.com/)
+- Only UI - Coded for Next.js
+- No Integrations
+- No Functional Blogging System
+- External Pages without Functions/Integrations
+- Community Support
+- Free Lifetime Future Updates
+___
 
-- **Videos:** Integration of instructional videos or promotional content.
-- **Testimonials:** Incorporating a carousel of testimonials for social proof.
-- **Newsletter Subscription:** An option for users to subscribe for updates and announcements.
+### [📦 Download](https://nextjstemplates.com/templates/solid)
 
----
+### [🔥 Get Pro](https://nextjstemplates.com/templates/solid)
+
+### [🔌 Documentation](https://nextjstemplates.com/docs)
+
+### ⚡ Deploy Now
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FNextJSTemplates%2Fsolid-nextjs)
+
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/NextJSTemplates/solid-nextjs)
+
+
+## Installation
+
+Here are the steps you need to follow to install the dependencies.
+
+1.Download and extract the template from **Next.js Templates.**
+
+2.**cd** into the template directory then run this command to install all the dependencies
+
+```bash
+    npm install
+```
+
+or
+
+```bash
+    yarn install
+ ```
+
+
+You can start the project on the local server
+
+```bash
+    npm run dev
+ ```
+
+It’ll start the template on [localhost:3000](http://localhost:3000).
+
+The documentation includes all the guides you need for the integrations.
+
+
+### Deploying on PaaS
+
+If you are using a GitHub repo then you can go with free-of-cost and easy-to-use options like [Vercel](https://vercel.com/), or [Netlify](https://netlify.com/) they offer decent-free tiers for Next.js hosting.
+
+### 📄 License
+Solid Free is 100% free and open-source, feel free to use with your personal and commercial projects.
+
+### 💜 Support
+If you like the template, please star this repository to inspire the team to create more stuff like this and reach more users like you!
+
+### ✨ Browse and Download - Best Free [Next.js Templates](https://nextjstemplates.com/templates)
