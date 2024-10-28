@@ -1,25 +1,13 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
-import Image from 'next/image'
 import { Heart, Download, Share2, X } from 'lucide-react'
+import { galleryImages, type GalleryImage } from './imageData'
 
 export default function ImageGallery() {
-  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string; id: number } | null>(null)
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
   const [isAnimating, setIsAnimating] = useState(false)
 
-  // This would typically come from an API or database
-  const images = [
-    { id: 1, src: '/placeholder.svg?height=400&width=600', alt: 'Group photo 1' },
-    { id: 2, src: '/placeholder.svg?height=400&width=600', alt: 'Group photo 2' },
-    { id: 3, src: '/placeholder.svg?height=400&width=600', alt: 'Group photo 3' },
-    { id: 4, src: '/placeholder.svg?height=400&width=600', alt: 'Group photo 4' },
-    { id: 5, src: '/placeholder.svg?height=300&width=400', alt: 'Classroom scene 1' },
-    { id: 6, src: '/placeholder.svg?height=300&width=400', alt: 'Classroom scene 2' },
-    { id: 7, src: '/placeholder.svg?height=300&width=400', alt: 'Classroom scene 3' },
-    { id: 8, src: '/placeholder.svg?height=300&width=400', alt: 'Classroom scene 4' },
-  ]
-
-  const openLightbox = (image: typeof images[0]) => {
+  const openLightbox = (image: GalleryImage) => {
     setSelectedImage(image)
     setIsAnimating(true)
     setTimeout(() => setIsAnimating(false), 300)
@@ -36,21 +24,21 @@ export default function ImageGallery() {
   const navigateImages = useCallback((direction: 'next' | 'prev') => {
     if (!selectedImage) return
 
-    const currentIndex = images.findIndex(img => img.id === selectedImage.id)
+    const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id)
     let newIndex
 
     if (direction === 'next') {
-      newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1
+      newIndex = currentIndex === galleryImages.length - 1 ? 0 : currentIndex + 1
     } else {
-      newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1
+      newIndex = currentIndex === 0 ? galleryImages.length - 1 : currentIndex - 1
     }
 
     setIsAnimating(true)
     setTimeout(() => {
-      setSelectedImage(images[newIndex])
+      setSelectedImage(galleryImages[newIndex])
       setIsAnimating(false)
     }, 150)
-  }, [selectedImage, images])
+  }, [selectedImage])
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -91,7 +79,7 @@ export default function ImageGallery() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {images.map((image, index) => (
+        {galleryImages.map((image, index) => (
           <div
             key={image.id}
             className={`${
@@ -107,12 +95,11 @@ export default function ImageGallery() {
             }}
             aria-label={`View ${image.alt}`}
           >
-            <Image
+            <img
               src={image.src}
               alt={image.alt}
-              width={index < 4 ? 600 : 400}
-              height={index < 4 ? 400 : 300}
               className="w-full h-auto object-cover rounded-lg"
+              loading="lazy"
             />
           </div>
         ))}
@@ -138,11 +125,9 @@ export default function ImageGallery() {
                 ←
               </button>
 
-              <Image
+              <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
-                width={1200}
-                height={800}
                 className={`w-full h-auto object-contain rounded-lg ${
                   isAnimating ? 'scale-95' : 'scale-100'
                 } transition-transform duration-300`}
@@ -166,7 +151,7 @@ export default function ImageGallery() {
             </div>
 
             <div className="mt-4 text-center text-white">
-              <p className="mb-2">{`Image ${images.findIndex(img => img.id === selectedImage.id) + 1} of ${images.length}`}</p>
+              <p className="mb-2">{`Image ${galleryImages.findIndex(img => img.id === selectedImage.id) + 1} of ${galleryImages.length}`}</p>
               <button
                 onClick={closeLightbox}
                 className="bg-white text-black py-2 px-6 rounded-lg hover:bg-gray-200 transition-colors"
