@@ -3,7 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost,https://deutschconnectacademy.vercel.app/"],
+    domains: ["deutschconnectacademy.vercel.app"],
     remotePatterns: [
       {
         protocol: "https",
