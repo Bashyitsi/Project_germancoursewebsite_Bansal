@@ -6,6 +6,7 @@ import Lines from "@/components/Lines";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Header />
           <ToasterContext />
           {children}
+          <SpeedInsights />
           <Footer />
           <ScrollToTop />
         </ThemeProvider>
