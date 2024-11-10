@@ -16,7 +16,7 @@ const Registration = () => {
     paymentVia: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
     setData((prevData) => ({
       ...prevData,
