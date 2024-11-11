@@ -7,8 +7,8 @@ import Testimonial from "@/components/Testimonial"
 import Pricing from "@/components/Pricing"
 
 export const metadata: Metadata = {
-  title: "Next.js Starter Template for SaaS Startups - Solid SaaS Boilerplate",
-  description: "This is Home for Solid Pro",
+  title: "Kigali Deutsch connect academy",
+  description: "This is Home for language learning ",
 }
 
 export default function Home() {
