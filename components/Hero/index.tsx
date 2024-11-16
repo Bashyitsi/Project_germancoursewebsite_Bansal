@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
-  const [heroHeight, setHeroHeight] = useState("100vh");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const backgroundImages = [
@@ -14,33 +13,21 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    const updateHeight = () => {
-      const windowHeight = window.innerHeight;
-      setHeroHeight(`${windowHeight}px`);
-    };
-
-    updateHeight();
-    window.addEventListener("resize", updateHeight);
-
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % backgroundImages.length
       );
     }, 5000); // Change image every 5 seconds
 
-    return () => {
-      window.removeEventListener("resize", updateHeight);
-      clearInterval(intervalId);
-    };
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
     <section
-      className="relative overflow-hidden"
-      style={{ height: heroHeight, marginTop: "70px" }}
+      className="relative w-full h-screen overflow-hidden z-0"
     >
       {/* Background Image Slider */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0">
         {backgroundImages.map((image, index) => (
           <Image
             key={index}
@@ -51,14 +38,14 @@ const Hero = () => {
             quality={100}
             style={{
               opacity: index === currentImageIndex ? 1 : 0,
-              transition: 'opacity 1s ease-in-out',
+              transition: "opacity 1s ease-in-out",
             }}
           />
         ))}
       </div>
 
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black opacity-50 z-1"></div>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
 
       {/* Hero Content */}
       <div className="relative z-10 h-full flex items-end justify-center pb-20 mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">

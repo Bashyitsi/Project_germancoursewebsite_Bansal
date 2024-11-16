@@ -5,6 +5,9 @@ import About from "@/components/About"
 import Integration from "@/components/Integration"
 import Testimonial from "@/components/Testimonial"
 import Pricing from "@/components/Pricing"
+import FunFact from "@/components/FunFact"
+import Features from "@/components/Features"
+import FAQ from "@/components/FAQ"
 
 export const metadata: Metadata = {
   title: "Kigali Deutsch connect academy",
@@ -15,11 +18,13 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Feature />
+      <FunFact />
       <About />
-      <Integration />
-      <Pricing />
       <Testimonial />
+      <Pricing />
+      <Integration />
+      <Features />
+      <FAQ />
     </main>
   )
 }

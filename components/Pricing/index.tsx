@@ -148,7 +148,7 @@ const Pricing = () => {
               <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
               Physical class
               </h4>
-              <p>All Levels paid at once</p>
+              <p>All Levels paid at once (A1, A2, B1.)</p>
 
               <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
                 <ul>
