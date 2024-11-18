@@ -9,6 +9,15 @@ if (!process.env.RESEND_API_KEY) {
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+interface ErrorWithMessage {
+  message: string;
+  stack?: string;
+  response?: {
+    data?: unknown;
+    status?: number;
+  };
+}
+
 export async function POST(request: Request) {
   try {
     const formData = await request.json();
@@ -35,7 +44,7 @@ export async function POST(request: Request) {
     
     const data = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: ['deutschconnecta@gmail.com'], // Make sure this email is correct
+      to: ['deutschconnecta@gmail.com'],
       subject: `New Registration from ${formData.name}`,
       html: emailHtml,
       replyTo: formData.email
@@ -50,20 +59,41 @@ export async function POST(request: Request) {
       data: data
     });
 
-  } catch (error) {
-    // Enhanced error logging
-    console.error('Detailed error:', {
-      message: error.message,
-      stack: error.stack,
-      responseData: error.response?.data,
-      statusCode: error.response?.status
-    });
+  } catch (error: unknown) {
+    // Type guard for error object
+    const isErrorWithMessage = (error: unknown): error is ErrorWithMessage => {
+      return (
+        typeof error === 'object' &&
+        error !== null &&
+        'message' in error &&
+        typeof (error as Record<string, unknown>).message === 'string'
+      );
+    };
 
+    // Enhanced error logging with type checking
+    if (isErrorWithMessage(error)) {
+      console.error('Detailed error:', {
+        message: error.message,
+        stack: error.stack,
+        responseData: error.response?.data,
+        statusCode: error.response?.status
+      });
+
+      return NextResponse.json(
+        { 
+          success: false,
+          error: 'Failed to process registration',
+          details: error.message
+        },
+        { status: 500 }
+      );
+    }
+
+    // Fallback for unknown error types
     return NextResponse.json(
       { 
         success: false,
-        error: 'Failed to process registration',
-        details: error.message
+        error: 'An unexpected error occurred'
       },
       { status: 500 }
     );
