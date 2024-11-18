@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     const emailHtml = await render(RegistrationEmail({ ...formData }));
 
     const data = await resend.emails.send({
-      from: 'https://kigalideutschacademy.vercel.app/',
+      from: 'onboarding@resend.dev',
       to: ['drichshema@gmail.com'],
       subject: `New Registration from ${formData.name}`,
       html: emailHtml,
