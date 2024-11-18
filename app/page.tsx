@@ -1,6 +1,5 @@
 import { Metadata } from "next"
 import Hero from "@/components/Hero"
-import Feature from "@/components/Features"
 import About from "@/components/About"
 import Integration from "@/components/Integration"
 import Testimonial from "@/components/Testimonial"

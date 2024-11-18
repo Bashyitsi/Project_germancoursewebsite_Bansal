@@ -56,10 +56,12 @@ const About = () => {
   };
 
   return (
-    <div
-      className="min-h-screen w-full relative flex flex-col justify-between bg-cover bg-center bg-fixed"
+    <div 
+      className="min-h-screen w-full relative flex flex-col justify-between bg-cover bg-center bg-no-repeat bg-fixed"
       style={{
         backgroundImage: "url('/images/about/about-dark-01.jpg')",
+        backgroundSize: 'cover', // Ensures image covers entire container
+        backgroundPosition: 'center', // Centers the background image
       }}
     >
       {/* Overlay */}
