@@ -51,15 +51,14 @@ const Hero = () => {
       <div className="relative z-10 h-full flex items-end justify-center pb-20 mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
         <div className="text-center transition-all duration-700 ease-in-out transform translate-y-0 opacity-100 hover:translate-y-2 hover:opacity-90">
           <h1 className="mb-6 text-4xl font-bold text-white xl:text-5xl">
-            Welcome to Deutsch Connect Academy
+             Kigali Deutsch  Academy
           </h1>
           <p className="mb-8 max-w-3xl mx-auto text-white text-lg">
-            Embark on your German language journey with Deutsch Connect Academy.
-            Our expert-led courses cater to all proficiency levels, from complete
-            beginners to advanced speakers.
+          Join Kigali Deutsch Academy for expert-led German courses tailored to all levels,
+           from beginners to advanced speakers. 
           </p>
           <h4 className="mb-4.5 text-lg font-bold text-primary bg-white bg-opacity-30 inline-block px-4 py-1 rounded-full">
-            📚 Your Path to German Fluency
+            📚 Start your journey!
           </h4>
         </div>
       </div>

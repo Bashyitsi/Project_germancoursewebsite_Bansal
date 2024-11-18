@@ -1,32 +1,40 @@
-import { useTheme } from "next-themes";
-import Image from "next/image";
+"use client"
+
+import { useTheme } from "next-themes"
+import { Moon, Sun } from 'lucide-react'
+import { useEffect, useState } from "react"
 
 const ThemeToggler = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <button
-      aria-label="theme toggler"
+      aria-label="Toggle theme"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="bg-gray-2 dark:bg-dark-bg absolute right-17 mr-1.5 flex cursor-pointer items-center justify-center rounded-full text-black dark:text-white lg:static"
+      className="relative h-7 w-14 rounded-full bg-gray-200 p-1 transition-colors duration-200 dark:bg-gray-700"
     >
-      <Image
-        src="/images/icon/icon-moon.svg"
-        alt="logo"
-        width={21}
-        height={21}
-        className="dark:hidden"
-      />
-
-      <Image
-        src="/images/icon/icon-sun.svg"
-        alt="logo"
-        width={22}
-        height={22}
-        className="hidden dark:block"
-      />
+      <div
+        className={`flex h-5 w-5 items-center justify-center rounded-full bg-white transition-transform duration-200 ${
+          theme === "dark" ? "translate-x-7" : "translate-x-0"
+        }`}
+      >
+        {theme === "dark" ? (
+          <Moon className="h-3 w-3 text-gray-800" />
+        ) : (
+          <Sun className="h-3 w-3 text-gray-800" />
+        )}
+      </div>
     </button>
-  );
-};
+  )
+}
 
-export default ThemeToggler;
+export default ThemeToggler

@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-email/components": "^0.0.28",
+    "@react-email/render": "^1.0.2",
     "@types/bcrypt": "^5.0.1",
     "@types/node": "^20.8.9",
     "@types/react": "^18.2.32",
@@ -26,6 +28,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.28.0",
+    "resend": "^4.0.1-alpha.0",
     "sharp": "^0.33.5",
     "swiper": "^9.3.2",
     "tailwind-merge": "^2.5.4"

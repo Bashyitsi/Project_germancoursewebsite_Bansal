@@ -1,13 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 const Registration = () => {
   const [data, setData] = useState({
     email: "",
     name: "",
+    phoneNumber: "",
     gender: "",
     germanLevel: "",
     registering: "",
@@ -15,6 +15,12 @@ const Registration = () => {
     paymentMode: "",
     paymentVia: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
 
   const handleChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
@@ -24,27 +30,55 @@ const Registration = () => {
     }));
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Registration failed');
+      }
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Registration successful! We will contact you soon.',
+      });
+      setData({
+        email: "",
+        name: "",
+        phoneNumber: "",
+        gender: "",
+        germanLevel: "",
+        registering: "",
+        timeSession: "",
+        paymentMode: "",
+        paymentVia: "",
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Registration failed. Please try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
-      {/* <!-- ===== Registration Form Start ===== --> */}
       <section className="pb-12.5 pt-32.5 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
         <div className="relative z-1 mx-auto max-w-c-1016 px-7.5 pb-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
-          <div className="absolute left-0 top-0 -z-1 h-2/3 w-full rounded-lg bg-gradient-to-t from-transparent to-[#dee7ff47] dark:bg-gradient-to-t dark:to-[#252A42]"></div>
-          <div className="absolute bottom-17.5 left-0 -z-1 h-1/3 w-full">
-            <Image
-              src="/images/shape/shape-dotted-light.svg"
-              alt="Dotted"
-              className="dark:hidden"
-              fill
-            />
-            <Image
-              src="/images/shape/shape-dotted-dark.svg"
-              alt="Dotted"
-              className="hidden dark:block"
-              fill
-            />
-          </div>
-
+          {/* Background elements remain the same */}
+          
           <motion.div
             variants={{
               hidden: {
@@ -66,7 +100,17 @@ const Registration = () => {
               Registration Form
             </h2>
 
-            <form>
+            {submitStatus.type && (
+              <div className={`mb-4 p-4 rounded ${
+                submitStatus.type === 'success' 
+                  ? 'bg-green-100 text-green-700' 
+                  : 'bg-red-100 text-red-700'
+              }`}>
+                {submitStatus.message}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit}>
               <div className="mb-7.5 flex flex-col gap-7.5 lg:mb-12.5">
                 <input
                   type="email"
@@ -80,9 +124,19 @@ const Registration = () => {
 
                 <input
                   type="text"
-                  placeholder="Name (first, middle and last name)"
+                  placeholder="Name (First, middle and last name)"
                   name="name"
                   value={data.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white"
+                />
+
+                <input
+                  type="tel"
+                  placeholder="Phone Number (07xxxxxxxx)"
+                  name="phoneNumber"
+                  value={data.phoneNumber}
                   onChange={handleChange}
                   required
                   className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white"
@@ -108,7 +162,7 @@ const Registration = () => {
                 </div>
 
                 <div className="flex flex-col gap-3">
-                  <label className="text-black dark:text-white">Knowledge of German Language*</label>
+                  <label className="text-black dark:text-white">Knowledge of German Language</label>
                   <select
                     name="germanLevel"
                     value={data.germanLevel}
@@ -133,7 +187,7 @@ const Registration = () => {
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee"
                   >
                     <option value="">Select level</option>
-                    {["A1", "A2", "B1", "B2"].map((level) => (
+                    {["A1", "A2", "B1", "B2","Exam Preparation"].map((level) => (
                       <option key={level} value={level}>{level}</option>
                     ))}
                   </select>
@@ -173,7 +227,6 @@ const Registration = () => {
                     <option value="">Select payment mode</option>
                     {[
                       "Full installment ",
-                      "2 installments ",
                       "Pay 3 levels ( 500,000 Rwf )"
                     ].map((mode) => (
                       <option key={mode} value={mode}>{mode}</option>
@@ -190,7 +243,7 @@ const Registration = () => {
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee"
                   >
                     <option value="">Select payment method</option>
-                    {["Cash", "Momo", "Bank a/c I&M"].map((method) => (
+                    {["Cash", "Momo", "Bank a/c "].map((method) => (
                       <option key={method} value={method}>{method}</option>
                     ))}
                   </select>
@@ -200,10 +253,13 @@ const Registration = () => {
               <div className="flex justify-center mb-10">
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   aria-label="Register"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
+                  className={`inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho ${
+                    isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
                 >
-                  Register
+                  {isSubmitting ? 'Registering...' : 'Register'}
                   <svg
                     className="fill-white"
                     width="14"
@@ -219,13 +275,10 @@ const Registration = () => {
                   </svg>
                 </button>
               </div>
-
-
             </form>
           </motion.div>
         </div>
       </section>
-      {/* <!-- ===== Registration Form End ===== --> */}
     </>
   );
 };

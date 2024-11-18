@@ -21,8 +21,8 @@ const Testimonial = () => {
             <SectionHeader
               headerInfo={{
                 title: `TESTIMONIALS`,
-                subtitle: `Client’s Testimonials`,
-                description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
+                subtitle: `What Our Clients Say`,
+                description: `Hear from our satisfied clients about their experiences. Our commitment to excellence is reflected in the feedback and stories shared by those who have trusted us with their needs.`,
               }}
             />
           </div>

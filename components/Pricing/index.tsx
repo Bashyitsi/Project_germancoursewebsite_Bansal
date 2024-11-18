@@ -13,8 +13,8 @@ const Pricing = () => {
             <SectionHeader
               headerInfo={{
                 title: `PRICING PLANS`,
-                subtitle: `Simple Pricing`,
-                description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
+                subtitle: `Flexible Pricing for All`,
+                description: `Select a plan that suits your needs and budget. Whether you’re a beginner or looking for advanced features, our pricing is designed to scale with your requirements.`,
               }}
             />
           </div>
@@ -52,6 +52,12 @@ const Pricing = () => {
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
                   Learning Materials
                   </li>
+                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
+                  Progress tracking
+                  </li>
+                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
+                  Interactive quizzes
+                  </li>
                   <li className="mb-4 text-black opacity-40 last:mb-0 dark:text-manatee">
                     Exclusive Support
                   </li>
@@ -62,6 +68,7 @@ const Pricing = () => {
               </div>
 
               <button
+               onClick={() => window.location.href = '/register'}
                 aria-label="Get the Plan button"
                 className="group/btn inline-flex items-center gap-2.5 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary"
               >
@@ -91,7 +98,7 @@ const Pricing = () => {
                 </span>
               </h3>
               <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-              Online class
+              Online Class
               </h4>
               <p>Choose Your level from A1, A2, B1 or B2</p>
 
@@ -104,6 +111,12 @@ const Pricing = () => {
                   online Materials
                   </li>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
+                  Access to recorded lessons
+                  </li>
+                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
+                  Progress tracking
+                  </li>
+                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
                     Exclusive Support
                   </li>
                   <li className="mb-4 text-black opacity-40 last:mb-0 dark:text-manatee">
@@ -113,6 +126,7 @@ const Pricing = () => {
               </div>
 
               <button
+               onClick={() => window.location.href = '/register'}
                 aria-label="Get the Plan button"
                 className="group/btn inline-flex items-center gap-2.5 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary"
               >
@@ -146,9 +160,9 @@ const Pricing = () => {
                 </span>
               </h3>
               <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-              Physical class
+              Physical Class
               </h4>
-              <p>All Levels paid at once (A1, A2, B1.)</p>
+              <p>All Levels paid at once to mean A1, A2 and B1</p>
 
               <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
                 <ul>
@@ -159,7 +173,7 @@ const Pricing = () => {
                   Learning Materials
                   </li>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                  Exam preparation
+                  Interactive quizzes
                   </li>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
                     Exclusive Support
@@ -167,15 +181,19 @@ const Pricing = () => {
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
                   Progress Tracking
                   </li>
+                  <li className="mb-4 text-black opacity-40 last:mb-0 dark:text-manatee">
+                  Exam preparation
+                  </li>
                 </ul>
               </div>
 
               <button
+               onClick={() => window.location.href = '/register'}
                 aria-label="Get the Plan button"
                 className="group/btn inline-flex items-center gap-2.5 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary"
               >
                 <span className="duration-300 group-hover/btn:pr-2">
-                  Get the Plan
+                 Enroll 
                 </span>
                 <svg
                   width="14"
@@ -194,29 +212,29 @@ const Pricing = () => {
             {/* <!-- Pricing Item 4 --> */}
             <div className="pricing-item animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/4 xl:p-12.5">
               <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                $99{" "}
+                50K{" "}
                 <span className="text-regular text-waterloo dark:text-manatee">
-                  /month
+                  /Rwf
                 </span>
               </h3>
-              <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                Enterprise Pack
+              <h4 className="mb-2 text-para2 font-medium text-black dark:text-white">
+              Exam Preparation
               </h4>
-              <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
+              <p>Goethe-Zertifikat, TestDaF, and other proficiency exams.</p>
 
               <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
                 <ul>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    1 TB Storage
+                  Intensive grammar review
                   </li>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Unlimited Photos and Videos
+                  Timed mock exams
                   </li>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Exclusive Support
+                  Vocabulary building exercises
                   </li>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Custom Branding Strategy
+                  Practice with past exam paperss
                   </li>
                 </ul>
               </div>
@@ -224,9 +242,10 @@ const Pricing = () => {
               <button
                 aria-label="Get the Plan button"
                 className="group/btn inline-flex items-center gap-2.5 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary"
+                 onClick={() => window.location.href = '/register'}
               >
                 <span className="duration-300 group-hover/btn:pr-2">
-                  Get the Plan
+                  Enroll
                 </span>
                 <svg
                   width="14"

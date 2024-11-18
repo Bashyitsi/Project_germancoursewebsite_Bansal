@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Lines from "@/components/Lines";
 import ScrollToTop from "@/components/ScrollToTop";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/Header/theme-provider";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
