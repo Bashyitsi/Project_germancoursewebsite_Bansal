@@ -10,10 +10,10 @@ const About = () => {
   const touchEndX = useRef(0);
 
   const images = [
-    "/images/about/about-light-01.png",
-    "/images/about/about-dark-01.jpg",
-    "/images/about/about-light-01.png",
-    "/images/about/about-dark-01.jpg",
+    "/images/about/icon1.jpg",
+    "/images/about/icon4.jpg",
+    "/images/about/icon3.jpg",
+    "/images/about/icon5.jpg",
   ];
 
   const handleImageChange = (

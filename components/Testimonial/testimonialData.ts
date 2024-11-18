@@ -1,5 +1,7 @@
 import image1 from "@/public/images/user/user-01.png";
 import image2 from "@/public/images/user/user-02.png";
+import image3 from "@/public/images/user/user-03.jpg";
+import image4 from "@/public/images/user/user-04.jpg";
 import { Testimonial } from "@/types/testimonial";
 
 export const testimonialData: Testimonial[] = [
@@ -13,7 +15,7 @@ export const testimonialData: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Angel",
+    name: "kevin",
     designation: "Student, Class of 2023",
     image: image2,
     content:
@@ -21,9 +23,9 @@ export const testimonialData: Testimonial[] = [
   },
   {
     id: 3,
-    name: "kevin",
+    name: "Angel",
     designation: "Student, Class of 2023",
-    image: image1,
+    image: image3,
     content:
       "Thanks to the engaging German classes, I can now assist tourists in my city who speak German. Just last week, I helped a lost German family find their way, and they were so grateful. These lessons have given me more confidence to interact with people from different backgrounds.",
   },
@@ -31,7 +33,7 @@ export const testimonialData: Testimonial[] = [
     id: 4,
     name: "Gasaro",
     designation: "Student, Class of 2024",
-    image: image2,
+    image: image4,
     content:
       "Taking German has greatly boosted my career prospects. I recently interned at a company with international clients, and my German skills allowed me to contribute to meetings and translate documents. It’s amazing how these lessons have become so practical in my daily life and career path.",
   },
