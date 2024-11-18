@@ -57,18 +57,19 @@ const About = () => {
 
   return (
     <div 
-      className="min-h-screen w-full relative flex flex-col justify-between bg-cover bg-center bg-no-repeat bg-fixed"
+      className="min-h-screen w-full relative flex flex-col justify-between bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: "url('/images/about/about-dark-01.jpg')",
-        backgroundSize: 'cover', // Ensures image covers entire container
-        backgroundPosition: 'center', // Centers the background image
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'scroll' // Change from fixed to scroll for mobile
       }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Main Content */}
-      <div className="relative z-10 flex-1 container mx-auto px-4 md:px-6 pt-20">
+      <div className="relative z-10 flex-1 container mx-auto px-4 md:px-6 pt-16 sm:pt-20">
         <motion.div
           variants={{
             hidden: { opacity: 0, x: -50 },
@@ -87,13 +88,13 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="text-left max-w-xl"
         >
-          <h2 className="relative mb-6 text-3xl sm:text-4xl md:text-5xl font-bold text-white xl:text-hero">
+          <h2 className="relative mb-4 sm:mb-6 text-2xl sm:text-4xl md:text-5xl font-bold text-white">
             <motion.span
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="block mb-2"
+              className="block mb-1 sm:mb-2"
             >
               Speak a New Language
             </motion.span>
@@ -102,7 +103,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark"
+              className="relative inline-block before:absolute before:bottom-1.5 sm:before:bottom-2.5 before:left-0 before:-z-1 before:h-2 sm:before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark"
             >
               Open New Doors
             </motion.span>
@@ -111,7 +112,7 @@ const About = () => {
       </div>
 
       {/* Carousel Section - Bottom */}
-      <div className="relative z-10 w-full pb-6">
+      <div className="relative z-10 w-full pb-4 sm:pb-6">
         <motion.div
           variants={{
             hidden: { opacity: 0, y: 20 },
@@ -121,23 +122,23 @@ const About = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="relative h-[200px] sm:h-[250px] md:h-[300px] max-w-6xl mx-auto flex items-center justify-center px-2 sm:px-4"
+          className="relative h-[160px] sm:h-[250px] md:h-[300px] max-w-6xl mx-auto flex items-center justify-center px-2 sm:px-4"
         >
           {/* Previous image preview */}
           <div
             onClick={() => handlePreviewClick("prev")}
-            className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 w-16 sm:w-20 md:w-44 h-[120px] sm:h-[180px] md:h-[240px] cursor-pointer transition-transform hover:scale-105"
+            className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 w-12 sm:w-20 md:w-44 h-[90px] sm:h-[180px] md:h-[240px] cursor-pointer transition-transform hover:scale-105"
           >
             <img
               src={images[currentIndex === 0 ? images.length - 1 : currentIndex - 1]}
               alt="Previous"
-              className="w-full h-full object-cover rounded-lg blur-[2px] opacity-40 scale-95 transition-all duration-500"
+              className="w-full h-full object-cover rounded-lg blur-[1px] opacity-40 scale-95 transition-all duration-500"
             />
           </div>
 
           {/* Main image container */}
           <div
-            className="relative w-[240px] sm:w-[400px] md:w-[640px] h-[160px] sm:h-[220px] md:h-[280px] rounded-xl overflow-hidden shadow-2xl"
+            className="relative w-[200px] sm:w-[400px] md:w-[640px] h-[130px] sm:h-[220px] md:h-[280px] rounded-xl overflow-hidden shadow-2xl"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -178,17 +179,17 @@ const About = () => {
           {/* Next image preview */}
           <div
             onClick={() => handlePreviewClick("next")}
-            className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 w-16 sm:w-20 md:w-44 h-[120px] sm:h-[180px] md:h-[240px] cursor-pointer transition-transform hover:scale-105"
+            className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 w-12 sm:w-20 md:w-44 h-[90px] sm:h-[180px] md:h-[240px] cursor-pointer transition-transform hover:scale-105"
           >
             <img
               src={images[currentIndex === images.length - 1 ? 0 : currentIndex + 1]}
               alt="Next"
-              className="w-full h-full object-cover rounded-lg blur-[2px] opacity-40 scale-95 transition-all duration-500"
+              className="w-full h-full object-cover rounded-lg blur-[1px] opacity-40 scale-95 transition-all duration-500"
             />
           </div>
 
           {/* Dot indicators */}
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
+          <div className="absolute -bottom-4 sm:-bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
             {images.map((_, index) => (
               <button
                 key={index}
