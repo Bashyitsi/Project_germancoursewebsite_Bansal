@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
     const data = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: ['drichshema@gmail.com'],
+      to: ['christoish20@gmail.com'],
       subject: `New Registration from ${formData.name}`,
       html: emailHtml,
       replyTo: formData.email  // Changed from reply_to to replyTo

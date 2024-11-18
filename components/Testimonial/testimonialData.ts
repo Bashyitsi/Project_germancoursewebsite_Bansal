@@ -5,7 +5,7 @@ import { Testimonial } from "@/types/testimonial";
 export const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Emily Johnson",
+    name: "Chance ",
     designation: "Student, Class of 2024",
     image: image1,
     content:
@@ -13,7 +13,7 @@ export const testimonialData: Testimonial[] = [
   },
   {
     id: 2,
-    name: "James Carter",
+    name: "Angel",
     designation: "Student, Class of 2023",
     image: image2,
     content:
@@ -21,7 +21,7 @@ export const testimonialData: Testimonial[] = [
   },
   {
     id: 3,
-    name: "Samantha Lee",
+    name: "kevin",
     designation: "Student, Class of 2023",
     image: image1,
     content:
@@ -29,7 +29,7 @@ export const testimonialData: Testimonial[] = [
   },
   {
     id: 4,
-    name: "Daniel Martinez",
+    name: "Gasaro",
     designation: "Student, Class of 2024",
     image: image2,
     content:
