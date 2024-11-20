@@ -10,7 +10,10 @@ import FAQ from "@/components/FAQ"
 
 export const metadata: Metadata = {
   title: "Kigali Deutsch connect academy",
-  description: "This is Home for language learning ",
+  description: "This is Home for language learning",
+  verification: {
+    google: "gCkABGzWMStG5RIVh3CGlhnseXjmHjYcWhRvZnLNT0E"
+  }
 }
 
 export default function Home() {
