@@ -3,6 +3,7 @@ export default function Head() {
     <>
       <title>Kigali Deutsch Academy</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta name="google-site-verification" content="gCkABGzWMStG5RIVh3CGlhnseXjmHjYcWhRvZnLNT0E" />
       <meta name="description" content="Built with Next.js and TypeScript" />
       <link rel="icon" href="/images/favicon.svg" />
     </>
