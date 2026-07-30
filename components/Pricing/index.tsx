@@ -92,7 +92,7 @@ const Pricing = () => {
             {/* <!-- Pricing Item 2 --> */}
             <div className="pricing-item animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/4 xl:p-12.5">
               <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                150K
+                200K
                 <span className="text-regular text-waterloo dark:text-manatee">
                   /RWF
                 </span>
